@@ -1,34 +1,29 @@
 <?php
-if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-    die(__('Please do not load this page directly. Thanks!', kopa_get_domain()));
-
-if (post_password_required() || !comments_open()):
+if (post_password_required()) {
     return;
-else:
-    ?>
-    <?php if (have_comments()) : ?>  
-        <div id="comments">
-            <h3>
-                <?php comments_number(__('No Comments', kopa_get_domain()), __('1 Comment', kopa_get_domain()), __('% Comments', kopa_get_domain())); ?><span data-icon="&#xf086;"></span>                
-            </h3>
-            <ol class="comments-list clearfix">
-                <?php
-                wp_list_comments(array(
-                    'walker' => null,
-                    'style' => 'ul',
-                    'callback' => 'kopa_comment_callback',
-                    'end-callback' => null,
-                    'type' => 'all'
-                ));
-                ?>
-            </ol>
-            <center class="pagination kopa-comment-pagination"><?php paginate_comments_links(); ?></center>
-            <div class="clear"></div>
-        </div>
-    <?php endif; ?>	  
-    <?php comment_form(kopa_comment_form_args()); ?>
-<?php endif; ?>
-
+}
+?>
+<?php if (have_comments()) : ?>  
+    <div id="comments">
+        <h3>
+            <?php comments_number(__('No Comments', kopa_get_domain()), __('1 Comment', kopa_get_domain()), __('% Comments', kopa_get_domain())); ?><span data-icon="&#xf086;"></span>                
+        </h3>
+        <ol class="comments-list clearfix">
+            <?php
+            wp_list_comments(array(
+                'walker' => null,
+                'style' => 'ul',
+                'callback' => 'kopa_comment_callback',
+                'end-callback' => null,
+                'type' => 'all'
+            ));
+            ?>
+        </ol>
+        <center class="pagination kopa-comment-pagination"><?php paginate_comments_links(); ?></center>
+        <div class="clear"></div>
+    </div>
+<?php endif; ?>	  
+<?php comment_form(kopa_comment_form_args()); ?>
 <?php
 
 function kopa_comment_callback($comment, $args, $depth) {
@@ -43,18 +38,18 @@ function kopa_comment_callback($comment, $args, $depth) {
             </div>
             <div class="comment-body clearfix">
                 <header class="clearfix">
-                    
+
                     <div class="comment-meta">
                         <span class="author"><?php comment_author_link(); ?></span>
                         <span class="date">&nbsp;-&nbsp;<?php comment_time(get_option('date_format') . ' - ' . get_option('time_format')); ?></span>
                     </div><!-- end:comment-meta -->                        
-                    
+
                     <div class="comment-button">
-                        
+
                         <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>   
 
                         <span>/</span>   
-                                                  
+
                         <?php edit_comment_link(__('Edit', kopa_get_domain())); ?>                                                        
                     </div>
 
@@ -64,7 +59,7 @@ function kopa_comment_callback($comment, $args, $depth) {
                 <!-- <a href="#" class="comment-reply-link small-button green-button">Reply</a> -->
             </div><!--comment-body -->
         </article>   
-    </li>                                                              
+                                                                 
 
     <?php
 }
@@ -94,7 +89,7 @@ function kopa_comment_form_args() {
                 </p></div>'
     );
 
-    if ( is_user_logged_in() ) {
+    if (is_user_logged_in()) {
         $comment_field = '<div class=""><p class="textarea-block">
             <label class="required" for="comment_message">' . __('Your comment <span>(required):</span>', kopa_get_domain()) . '</label>        
             <textarea name="comment" id="comment_message"></textarea>
@@ -104,7 +99,7 @@ function kopa_comment_form_args() {
             <label class="required" for="comment_message">' . __('Your comment <span>(required):</span>', kopa_get_domain()) . '</label>        
             <textarea name="comment" id="comment_message"></textarea>
             </p></div><div class="clear"></div>';
-    } // endif is_user_logged_in
+    }
 
 
     $args = array(

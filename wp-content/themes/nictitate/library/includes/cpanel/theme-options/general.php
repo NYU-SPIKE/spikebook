@@ -205,7 +205,7 @@
     <div class="kopa-box-body">
         <div class="kopa-element-box kopa-theme-options">
             <span class="kopa-component-title"><?php _e('Left header description:', kopa_get_domain()); ?></span>
-            <input type="text" value="<?php echo get_option('kopa_theme_options_left_header_description', 'Call toll free: 0307 472 1942'); ?>" id="kopa_theme_options_left_header_description" name="kopa_theme_options_left_header_description">
+            <input type="text" value="<?php echo htmlspecialchars(stripslashes(get_option('kopa_theme_options_left_header_descriptio', 'Call toll free: 0307 472 1942'))); ?>" id="kopa_theme_options_left_header_description" name="kopa_theme_options_left_header_description">
         </div>
     </div>
 

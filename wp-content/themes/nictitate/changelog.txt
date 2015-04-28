@@ -1,6 +1,60 @@
 Theme : Nictitate (wordpress.org release)
-Version : 1.0.9
+Version : 1.1.3
 Author : Kopatheme - http://kopatheme.com
+
+Oct 10 2014 - 1.1.4
+==========================================================
+- update validate comment
+
+Sep 3 2014 - 1.1.3
+===========================================================
+- fixed bug when enter " in theme options
+
+Aug 6 2014 - 1.1.2
+===========================================================
+- Provide the license for the slider image in screenshot
+
+
+
+Aug 1 2014 - 1.1.1
+===========================================================
+- Removed: folder plugins.
+
+- Edited: comments.php, 
+
++ Replace:
+if (post_password_required() || !comments_open()):
+    return;
+else:
+
++ By:
+if ( post_password_required() ) {
+	return;
+}
+
+- Moved: favicon & apple icon to filter wp_head. (this featured turned off by default)
+
+- Edited: searchform.php
+
++ Replace:
+esc_url(home_url()); 
+
++ By:
+esc_url(home_url('/'));
+
+
+
+July 24 2014 - 1.1.0
+===========================================================
+- Fixed: footer info allow HTML tag
+- Fixed: sub-menu level 3 invalid
+- Fixed: remove default icon "home" on Main Menu
+- Removed: shortcode: audio, soundcloud 
+
+
+June 24 2014 - 1.0.10
+===========================================================
+- Changed: reduce delay time of main-menu
 
 March 07 2014 - 1.0.9
 ===========================================================

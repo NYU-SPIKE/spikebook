@@ -4,7 +4,7 @@ Theme URI: http://kopatheme.com/freebies/nictitate-multi-purpose-wordpress-theme
 Author: Kopatheme
 Author URI: http://kopatheme.com
 Description: View full live demo &amp; feature list <a href=" http://kopatheme.com/freebies/nictitate-multi-purpose-wordpress-theme-light-version/">here</a>. Nictitate theme is designed for portfolios and corporate with flexible layout. The theme is based on KOPATHEME layout manager technique that will let you flexibility choose layout options of every pages within your site. It is very helpful when you are experimenting with visual hierarchy. You can define unlimited sidebar for widget areas, and with powerful custom widgets, the theme provides you more flexibility and ease-of-use for your site
-Version: 1.0.9
+Version: 1.1.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blue, white, right-sidebar, responsive-layout, custom-menu, featured-images, post-formats, threaded-comments, theme-options, translation-ready
@@ -130,7 +130,7 @@ Elements
 .more-link span {
     float:right;
     margin-left:5px;
-    margin-top:2px;
+    margin-top:5px;
 }
 .more-link:hover {
     color:#555;

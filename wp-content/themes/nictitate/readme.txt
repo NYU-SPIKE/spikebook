@@ -30,5 +30,13 @@ Other Licenses
 --------------------
 See headers of files for further details.
 
+
+
+--------------------
+Screenshot
+--------------------
+http://pixabay.com/en/car-mercedes-automobile-78738/
+
+
 Thanks!
 KOPASOFT

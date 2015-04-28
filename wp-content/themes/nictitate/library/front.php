@@ -8,21 +8,21 @@ function kopa_front_after_setup_theme() {
     add_theme_support('automatic-feed-links');
 
     $cbg_defaults = array(
-        'default-color'          => '',
-        'default-image'          => '',
-        'wp-head-callback'       => 'kopa_custom_background_cb',
-        'admin-head-callback'    => '',
+        'default-color' => '',
+        'default-image' => '',
+        'wp-head-callback' => 'kopa_custom_background_cb',
+        'admin-head-callback' => '',
         'admin-preview-callback' => ''
     );
-    add_theme_support( 'custom-background', $cbg_defaults );
+    add_theme_support('custom-background', $cbg_defaults);
 
     global $content_width;
-    if ( ! isset( $content_width ) )
+    if (!isset($content_width))
         $content_width = 806;
 
     register_nav_menus(array(
-        'main-nav'   => __( 'Main Menu', kopa_get_domain() ),
-        'bottom-nav' => __( 'Bottom Menu', kopa_get_domain() )
+        'main-nav' => __('Main Menu', kopa_get_domain()),
+        'bottom-nav' => __('Bottom Menu', kopa_get_domain())
     ));
 
     if (!is_admin()) {
@@ -38,34 +38,29 @@ function kopa_front_after_setup_theme() {
         add_filter('comment_reply_link', 'kopa_comment_reply_link');
         add_filter('edit_comment_link', 'kopa_edit_comment_link');
         add_filter('excerpt_more', 'kopa_new_excerpt_more');
-        add_filter( 'wp_title', 'kopa_wp_title', 10, 2 );
+        add_filter('wp_title', 'kopa_wp_title', 10, 2);
     } else {
-        // add_action('show_user_profile', 'kopa_edit_user_profile');
-        // add_action('edit_user_profile', 'kopa_edit_user_profile');
-        // add_action('personal_options_update', 'kopa_edit_user_profile_update');
-        // add_action('edit_user_profile_update', 'kopa_edit_user_profile_update');
         add_filter('image_size_names_choose', 'kopa_image_size_names_choose');
     }
 
     /* Add theme's image sizes */
-    $sizes = apply_filters( 'kopa_get_image_sizes', array(
+    $sizes = apply_filters('kopa_get_image_sizes', array(
         'kopa-image-size-0' => array(806, 393, true, __('Single Post Thumbnail (Kopatheme)', kopa_get_domain())),
-        'kopa-image-size-1'  => array(251, 199, true, __('Thumbnail pm posts list widget (Kopatheme)', kopa_get_domain())),
-        'kopa-image-size-2'  => array(80, 80, true, __('Testimonial avatar (Kopatheme)', kopa_get_domain())),
-        'kopa-image-size-3'  => array(252, 201, true, __('Post Carousel Thumbnail (Kopatheme)', kopa_get_domain())),
-        'kopa-image-size-4'  => array(150, 38, true, __('Client Logo (Kopatheme)', kopa_get_domain())),
-        'kopa-image-size-5'  => array(118, 118, true, __('Portfolio Thumbnail 1 (Kopatheme)', kopa_get_domain())),
-        'kopa-image-size-6'  => array(118, 239, true, __('Portfolio Thumbnail 2 (Kopatheme)', kopa_get_domain())),
-        'kopa-image-size-7'  => array(239, 118, true, __('Portfolio Thumbnail 3 (Kopatheme)', kopa_get_domain())),
-        'kopa-image-size-8'  => array(239, 239, true, __('Portfolio Thumbnail 4 (Kopatheme)', kopa_get_domain())),
-        'kopa-image-size-9'  => array(1086, 529, true, __('Single Post Fullwidth Thumbnail (Kopatheme)', kopa_get_domain())),
+        'kopa-image-size-1' => array(251, 199, true, __('Thumbnail pm posts list widget (Kopatheme)', kopa_get_domain())),
+        'kopa-image-size-2' => array(80, 80, true, __('Testimonial avatar (Kopatheme)', kopa_get_domain())),
+        'kopa-image-size-3' => array(252, 201, true, __('Post Carousel Thumbnail (Kopatheme)', kopa_get_domain())),
+        'kopa-image-size-4' => array(150, 38, true, __('Client Logo (Kopatheme)', kopa_get_domain())),
+        'kopa-image-size-5' => array(118, 118, true, __('Portfolio Thumbnail 1 (Kopatheme)', kopa_get_domain())),
+        'kopa-image-size-6' => array(118, 239, true, __('Portfolio Thumbnail 2 (Kopatheme)', kopa_get_domain())),
+        'kopa-image-size-7' => array(239, 118, true, __('Portfolio Thumbnail 3 (Kopatheme)', kopa_get_domain())),
+        'kopa-image-size-8' => array(239, 239, true, __('Portfolio Thumbnail 4 (Kopatheme)', kopa_get_domain())),
+        'kopa-image-size-9' => array(1086, 529, true, __('Single Post Fullwidth Thumbnail (Kopatheme)', kopa_get_domain())),
         'kopa-image-size-10' => array(104, 84, true, __('Products Widget Thumbnail (Kopatheme)', kopa_get_domain())),
         'kopa-image-size-11' => array(531, 326, true, __('About Widget Slider Image (Kopatheme)', kopa_get_domain())),
     ));
     foreach ($sizes as $slug => $details) {
-        // Declare sizes
         add_image_size($slug, $details[0], $details[1], $details[2]);
-    } 
+    }
 }
 
 function kopa_comment_reply_link($link) {
@@ -154,37 +149,37 @@ function kopa_front_enqueue_scripts() {
         $load_font_array = array();
 
         // heading font family
-        if ($current_heading_font && ! in_array($current_heading_font, $load_font_array)) {
+        if ($current_heading_font && !in_array($current_heading_font, $load_font_array)) {
             array_push($load_font_array, $current_heading_font);
         }
 
         // content font family
-        if ($current_content_font && ! in_array($current_content_font, $load_font_array)) {
+        if ($current_content_font && !in_array($current_content_font, $load_font_array)) {
             array_push($load_font_array, $current_content_font);
         }
 
         // main menu font family
-        if ($current_main_nav_font && ! in_array($current_main_nav_font, $load_font_array)) {
+        if ($current_main_nav_font && !in_array($current_main_nav_font, $load_font_array)) {
             array_push($load_font_array, $current_main_nav_font);
         }
 
         // sub menu font family
-        if ($current_dropdown_font && ! in_array($current_dropdown_font, $load_font_array)) {
+        if ($current_dropdown_font && !in_array($current_dropdown_font, $load_font_array)) {
             array_push($load_font_array, $current_dropdown_font);
         }
 
         // right sidebar: widget title font family  
-        if ($current_wdg_sidebar_font && ! in_array($current_wdg_sidebar_font, $load_font_array)) {
+        if ($current_wdg_sidebar_font && !in_array($current_wdg_sidebar_font, $load_font_array)) {
             array_push($load_font_array, $current_wdg_sidebar_font);
         }
 
         // main content sidebar: widget title font family  
-        if ($current_wdg_main_font && ! in_array($current_wdg_main_font, $load_font_array)) {
+        if ($current_wdg_main_font && !in_array($current_wdg_main_font, $load_font_array)) {
             array_push($load_font_array, $current_wdg_main_font);
         }
 
         // footer sidebar: widget title font family
-        if ($current_wdg_footer_font && ! in_array($current_wdg_footer_font, $load_font_array)) {
+        if ($current_wdg_footer_font && !in_array($current_wdg_footer_font, $load_font_array)) {
             array_push($load_font_array, $current_wdg_footer_font);
         }
 
@@ -221,7 +216,7 @@ function kopa_front_enqueue_scripts() {
         wp_enqueue_script('kopa-modernizr', $dir . '/js/modernizr.custom.js');
         wp_enqueue_script('jquery');
         wp_localize_script('jquery', 'kopa_front_variable', kopa_front_localize_script());
-        
+
         /**
          * Fix: Superfish conflicts with WP admin bar
          * @author joeldbirch
@@ -306,8 +301,9 @@ function kopa_the_category($thelist) {
 }
 
 /* FUNCTION */
+
 function kopa_image_size_names_choose($sizes) {
-    $kopa_sizes = apply_filters( 'kopa_get_image_sizes', array(
+    $kopa_sizes = apply_filters('kopa_get_image_sizes', array(
         'kopa-image-size-0' => array(806, 393, TRUE, __('Single Post Thumbnail (Kopatheme)', kopa_get_domain())),
         'kopa-image-size-1' => array(251, 199, TRUE, __('Thumbnail pm posts list widget (Kopatheme)', kopa_get_domain())),
         'kopa-image-size-2' => array(80, 80, TRUE, __('Testimonial avatar (Kopatheme)', kopa_get_domain())),
@@ -387,63 +383,62 @@ function kopa_breadcrumb() {
                 }
             }
             $breadcrumb.= $prefix . sprintf('<span class="%1$s">%2$s</span>', $current_class, get_the_category_by_ID(get_queried_object_id()));
-
-        } else if ( is_tax('product_cat') ) {
+        } else if (is_tax('product_cat')) {
             $breadcrumb.= $breadcrumb_home;
-            $breadcrumb.= '<a href="'.get_page_link( jigoshop_get_page_id('shop') ).'">'.get_the_title( jigoshop_get_page_id('shop') ).'</a>';
-            $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+            $breadcrumb.= '<a href="' . get_page_link(jigoshop_get_page_id('shop')) . '">' . get_the_title(jigoshop_get_page_id('shop')) . '</a>';
+            $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 
             $parents = array();
             $parent = $term->parent;
             while ($parent):
                 $parents[] = $parent;
-                $new_parent = get_term_by( 'id', $parent, get_query_var( 'taxonomy' ));
+                $new_parent = get_term_by('id', $parent, get_query_var('taxonomy'));
                 $parent = $new_parent->parent;
             endwhile;
-            if( ! empty( $parents ) ):
+            if (!empty($parents)):
                 $parents = array_reverse($parents);
                 foreach ($parents as $parent):
-                    $item = get_term_by( 'id', $parent, get_query_var( 'taxonomy' ));
-                    $breadcrumb .= '<a href="' . get_term_link( $item->slug, 'product_cat' ) . '">' . $item->name . '</a>';
+                    $item = get_term_by('id', $parent, get_query_var('taxonomy'));
+                    $breadcrumb .= '<a href="' . get_term_link($item->slug, 'product_cat') . '">' . $item->name . '</a>';
                 endforeach;
             endif;
 
             $queried_object = get_queried_object();
             $breadcrumb.= $prefix . sprintf('<span class="%1$s">%2$s</span>', $current_class, $queried_object->name);
-        } else if ( is_tax( 'product_tag' ) ) {
+        } else if (is_tax('product_tag')) {
             $breadcrumb.= $breadcrumb_home;
-            $breadcrumb.= '<a href="'.get_page_link( jigoshop_get_page_id('shop') ).'">'.get_the_title( jigoshop_get_page_id('shop') ).'</a>';
+            $breadcrumb.= '<a href="' . get_page_link(jigoshop_get_page_id('shop')) . '">' . get_the_title(jigoshop_get_page_id('shop')) . '</a>';
             $queried_object = get_queried_object();
             $breadcrumb.= $prefix . sprintf('<span class="%1$s">%2$s</span>', $current_class, $queried_object->name);
         } else if (is_single()) {
             $breadcrumb.= $breadcrumb_home;
 
-            if ( get_post_type() === 'product' ) :
+            if (get_post_type() === 'product') :
 
-                $breadcrumb .= '<a href="'.get_page_link( jigoshop_get_page_id('shop') ).'">'.get_the_title( jigoshop_get_page_id('shop') ).'</a>';
+                $breadcrumb .= '<a href="' . get_page_link(jigoshop_get_page_id('shop')) . '">' . get_the_title(jigoshop_get_page_id('shop')) . '</a>';
 
-                if ($terms = get_the_terms( $post->ID, 'product_cat' )) :
-                    $term = apply_filters( 'jigoshop_product_cat_breadcrumb_terms', current($terms), $terms);
+                if ($terms = get_the_terms($post->ID, 'product_cat')) :
+                    $term = apply_filters('jigoshop_product_cat_breadcrumb_terms', current($terms), $terms);
                     $parents = array();
                     $parent = $term->parent;
                     while ($parent):
                         $parents[] = $parent;
-                        $new_parent = get_term_by( 'id', $parent, 'product_cat');
+                        $new_parent = get_term_by('id', $parent, 'product_cat');
                         $parent = $new_parent->parent;
                     endwhile;
-                    if(!empty($parents)):
+                    if (!empty($parents)):
                         $parents = array_reverse($parents);
                         foreach ($parents as $parent):
-                            $item = get_term_by( 'id', $parent, 'product_cat');
-                            $breadcrumb .= '<a href="' . get_term_link( $item->slug, 'product_cat' ) . '">' . $item->name . '</a>';
+                            $item = get_term_by('id', $parent, 'product_cat');
+                            $breadcrumb .= '<a href="' . get_term_link($item->slug, 'product_cat') . '">' . $item->name . '</a>';
                         endforeach;
                     endif;
-                    $breadcrumb .= '<a href="' . get_term_link( $term->slug, 'product_cat' ) . '">' . $term->name . '</a>';
+                    $breadcrumb .= '<a href="' . get_term_link($term->slug, 'product_cat') . '">' . $term->name . '</a>';
                 endif;
 
                 $breadcrumb.= $prefix . sprintf('<span class="%1$s">%2$s</span>', $current_class, get_the_title());
 
-            else : 
+            else :
 
                 $categories = get_the_category(get_queried_object_id());
                 if ($categories) {
@@ -456,7 +451,6 @@ function kopa_breadcrumb() {
                 $breadcrumb.= $prefix . sprintf('<span class="%1$s">%2$s</span>', $current_class, get_the_title($post_id));
 
             endif;
-
         } else if (is_page()) {
             if (!is_front_page()) {
                 $post_id = get_queried_object_id();
@@ -492,7 +486,6 @@ function kopa_breadcrumb() {
                 $breadcrumb.= $prefix . sprintf('<a href="%1$s">%2$s</a>', get_month_link($date['y'], $date['m']), date('F', mktime(0, 0, 0, $date['m'])));
                 $breadcrumb.= $prefix . sprintf('<span class="%1$s">%2$s</span>', $current_class, $date['d']);
             }
-
         } else if (is_search()) {
             $breadcrumb.= $breadcrumb_home;
 
@@ -574,34 +567,35 @@ function kopa_get_related_articles() {
                                         <li style="width: 390px;">
                                             <article class="entry-item clearfix">
                                                 <div class="entry-thumb hover-effect">
-                                                    <?php switch ( get_post_format() ) : 
-                                                        
-                                                        // video post format
-                                                        case 'video': 
-                                                            $video = kopa_content_get_video( get_the_content() );
+                                                    <?php
+                                                    switch (get_post_format()) :
 
-                                                            if ( ! empty( $video ) ) :
+                                                        // video post format
+                                                        case 'video':
+                                                            $video = kopa_content_get_video(get_the_content());
+
+                                                            if (!empty($video)) :
                                                                 $video = $video[0];
-                                                    ?>
+                                                                ?>
                                                                 <div class="mask">
                                                                     <a class="link-detail" rel="prettyPhoto" data-icon="&#xf04b;" href="<?php echo $video['url'] ?>"></a>
                                                                 </div>
-                                                    <?php
-                                                                if ( has_post_thumbnail() )
-                                                                    the_post_thumbnail( 'kopa-image-size-1' );
-                                                                else 
-                                                                    echo '<img src="'.kopa_get_video_thumbnails_url( $video['type'], $video['url'] ).'">';
-                                                            
+                                                                <?php
+                                                                if (has_post_thumbnail())
+                                                                    the_post_thumbnail('kopa-image-size-1');
+                                                                else
+                                                                    echo '<img src="' . kopa_get_video_thumbnails_url($video['type'], $video['url']) . '">';
+
                                                             endif; // endif ! empty( $video )
 
                                                             break;
 
                                                         // gallery post format
                                                         case 'gallery':
-                                                            $gallery = kopa_content_get_gallery( get_the_content() );
-                                                            
-                                                            if ( ! empty( $gallery ) ) :
-                                                            
+                                                            $gallery = kopa_content_get_gallery(get_the_content());
+
+                                                            if (!empty($gallery)) :
+
                                                                 $shortcode = $gallery[0]['shortcode'];
 
                                                                 // get gallery string ids
@@ -615,46 +609,47 @@ function kopa_get_related_articles() {
                                                                 $first_image_id = array_shift($gallery_ids);
                                                                 $first_image_src = wp_get_attachment_image_src($first_image_id, 'kopa-image-size-1');
                                                                 $first_full_image_src = wp_get_attachment_image_src($first_image_id, 'full');
-                                                                
+
                                                                 $slug = 'gallery-' . get_the_ID();
-                                                    ?>
+                                                                ?>
                                                                 <div class="mask">
                                                                     <a class="link-detail" rel="prettyPhoto[<?php echo $slug; ?>]" data-icon="&#xf03e;" href="<?php echo $first_full_image_src[0]; ?>"></a>
                                                                 </div>
-                                                    <?php
+                                                                <?php
                                                                 foreach ($gallery_ids as $gallery_id) :
-                                                                    $image_src = wp_get_attachment_image_src($gallery_id, 'full'); 
-                                                    ?>
+                                                                    $image_src = wp_get_attachment_image_src($gallery_id, 'full');
+                                                                    ?>
                                                                     <a style="display: none" href="<?php echo $image_src[0]; ?>" rel="prettyPhoto[<?php echo $slug; ?>]"></a>
-                                                    <?php 
+                                                                    <?php
                                                                 endforeach;
-                                                                
-                                                                if ( has_post_thumbnail() )
-                                                                    the_post_thumbnail( 'kopa-image-size-1' );
-                                                                else 
-                                                                    echo '<img src="'.$first_image_src[0].'">';
-                                                            
+
+                                                                if (has_post_thumbnail())
+                                                                    the_post_thumbnail('kopa-image-size-1');
+                                                                else
+                                                                    echo '<img src="' . $first_image_src[0] . '">';
+
                                                             endif; // endif ! empty ( $gallery )
 
                                                             break;
 
                                                         // default post format
-                                                        default: 
-                                                            if (get_post_format()  == 'quote')
+                                                        default:
+                                                            if (get_post_format() == 'quote')
                                                                 $data_icon = '&#xf10d;';
                                                             elseif (get_post_format() == 'audio')
                                                                 $data_icon = '&#xf001;';
                                                             else
                                                                 $data_icon = '&#xf0c1;';
-                                                    ?>
+                                                            ?>
                                                             <div class="mask">
                                                                 <a class="link-detail" data-icon="<?php echo $data_icon; ?>" href="<?php the_permalink(); ?>"></a>
                                                             </div>
-                                                    <?php 
-                                                            if ( has_post_thumbnail() )
-                                                                the_post_thumbnail( 'kopa-image-size-1' );
+                                                            <?php
+                                                            if (has_post_thumbnail())
+                                                                the_post_thumbnail('kopa-image-size-1');
                                                             break;
-                                                    endswitch; ?>
+                                                    endswitch;
+                                                    ?>
                                                 </div>
                                                 <div class="entry-content">
                                                     <h6 class="entry-title"><a href="<?php echo $post_url; ?>"><?php echo $post_title; ?></a><span></span></h6>
@@ -735,8 +730,9 @@ function kopa_get_related_portfolio() {
                                                     <div class="mask">
                                                         <a class="link-detail" data-icon="&#xf0c1;" href="<?php the_permalink(); ?>"></a>
                                                     </div>
-                                                    <?php if ( has_post_thumbnail() )
-                                                        the_post_thumbnail( 'kopa-image-size-1' );
+                                                    <?php
+                                                    if (has_post_thumbnail())
+                                                        the_post_thumbnail('kopa-image-size-1');
                                                     ?>
                                                 </div>
                                                 <div class="entry-content">
@@ -956,19 +952,19 @@ function kopa_get_video_thumbnails_url($type, $url) {
     if ('youtube' === $type) {
         preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $url, $matches);
         $file_url = "http://gdata.youtube.com/feeds/api/videos/" . $matches[0] . "?v=2&alt=jsonc";
-        $results = wp_remote_get( $file_url );
-        
-        if ( ! is_wp_error($results) ) {
-            $json = json_decode( $results['body'] );
+        $results = wp_remote_get($file_url);
+
+        if (!is_wp_error($results)) {
+            $json = json_decode($results['body']);
             $thubnails = $json->data->thumbnail->hqDefault;
         }
     } else if ('vimeo' === $type) {
         preg_match_all('#(http://vimeo.com)/([0-9]+)#i', $url, $matches);
         $imgid = $matches[2][0];
-           
+
         $results = wp_remote_get("http://vimeo.com/api/v2/video/$imgid.php");
-        
-        if ( ! is_wp_error($results) ) { 
+
+        if (!is_wp_error($results)) {
             $hash = unserialize($results['body']);
             $thubnails = $hash[0]['thumbnail_large'];
         }
@@ -1082,17 +1078,43 @@ function kopa_head() {
         #comments .comment-avatar img,
         .kopa-our-team-widget ul li .our-team-social-link li a,
         .kp-dropcap.color {
-            behavior: url(".get_template_directory_uri()."/js/PIE.htc);
+            behavior: url(" . get_template_directory_uri() . "/js/PIE.htc);
         }
     </style>";
+
+    $favicon = get_option('kopa_theme_options_favicon_url');
+    if ($favicon) {
+        printf('<link rel="shortcut icon" type="image/x-icon"  href="%s">', $favicon);
+    }
+
+    $iphone_icon = get_option('kopa_theme_options_apple_iphone_icon_url');
+    if ($iphone_icon) {
+        printf('<link rel="apple-touch-icon" sizes="57x57" href="%s">', $iphone_icon);
+    }
+
+    $ipad_icon = get_option('kopa_theme_options_apple_ipad_icon_url');
+    if ($ipad_icon) {
+        printf('<link rel="apple-touch-icon" sizes="72x72" href="%s">', $ipad_icon);
+    }
+
+    $iphone_retina_icon = get_option('kopa_theme_options_apple_iphone_retina_icon_url');
+    if ($iphone_retina_icon) {
+        printf('<link rel="apple-touch-icon" sizes="114x114" href="%s">', $iphone_retina_icon);
+    }
+
+    $ipad_retina_icon = get_option('kopa_theme_options_apple_ipad_retina_icon_url');
+    if ($ipad_retina_icon) {
+        printf('<link rel="apple-touch-icon" sizes="144x144" href="%s">', $ipad_retina_icon);
+    }
 }
 
 /* IE js header */
+
 function kopa_ie_js_header() {
-    echo '<!--[if lt IE 9]>'. "\n";
-    echo '<script src="' . esc_url( get_template_directory_uri() . '/js/html5.js' ) . '"></script>'. "\n";
-    echo '<script src="' . esc_url( get_template_directory_uri() . '/js/css3-mediaqueries.js' ) . '"></script>'. "\n";
-    echo '<![endif]-->'. "\n";
+    echo '<!--[if lt IE 9]>' . "\n";
+    echo '<script src="' . esc_url(get_template_directory_uri() . '/js/html5.js') . '"></script>' . "\n";
+    echo '<script src="' . esc_url(get_template_directory_uri() . '/js/css3-mediaqueries.js') . '"></script>' . "\n";
+    echo '<![endif]-->' . "\n";
 }
 
 /* ==============================================================================
@@ -1111,10 +1133,10 @@ class kopa_mobile_menu extends Walker_Nav_Menu {
         $classes[] = 'menu-item-' . $item->ID;
 
         $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
-        
+
         if ($depth == 0)
             $class_names = $class_names ? ' class="' . esc_attr($class_names) . ' clearfix"' : 'class="clearfix"';
-        else 
+        else
             $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : 'class=""';
 
         $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
@@ -1160,9 +1182,11 @@ class kopa_mobile_menu extends Walker_Nav_Menu {
         }
     }
 
-} // end mobile menu walker class
+}
 
-function kopa_new_excerpt_more( $more ) {
+// end mobile menu walker class
+
+function kopa_new_excerpt_more($more) {
     return '...';
 }
 
@@ -1173,18 +1197,18 @@ function kopa_new_excerpt_more( $more ) {
 function kopa_hex2rgba($hex, $alpha = false) {
     $hex = str_replace("#", "", $hex);
 
-    if(strlen($hex) == 3) {
-        $r = hexdec(substr($hex,0,1).substr($hex,0,1));
-        $g = hexdec(substr($hex,1,1).substr($hex,1,1));
-        $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+    if (strlen($hex) == 3) {
+        $r = hexdec(substr($hex, 0, 1) . substr($hex, 0, 1));
+        $g = hexdec(substr($hex, 1, 1) . substr($hex, 1, 1));
+        $b = hexdec(substr($hex, 2, 1) . substr($hex, 2, 1));
     } else {
-        $r = hexdec(substr($hex,0,2));
-        $g = hexdec(substr($hex,2,2));
-        $b = hexdec(substr($hex,4,2));
+        $r = hexdec(substr($hex, 0, 2));
+        $g = hexdec(substr($hex, 2, 2));
+        $b = hexdec(substr($hex, 4, 2));
     }
-    if ( $alpha )
+    if ($alpha)
         return array($r, $g, $b, $alpha);
-    
+
     return array($r, $g, $b);
 }
 
@@ -1193,42 +1217,42 @@ function kopa_hex2rgba($hex, $alpha = false) {
  */
 function kopa_custom_background_cb() {
     // $background is the saved custom image, or the default image.
-    $background = set_url_scheme( get_background_image() );
+    $background = set_url_scheme(get_background_image());
 
     // $color is the saved custom color.
     // A default has to be specified in style.css. It will not be printed here.
-    $color = get_theme_mod( 'background_color' );
+    $color = get_theme_mod('background_color');
 
-    if ( ! $background && ! $color )
+    if (!$background && !$color)
         return;
 
     $style = $color ? "background-color: #$color;" : '';
 
-    if ( $background ) {
+    if ($background) {
         $image = " background-image: url('$background');";
 
-        $repeat = get_theme_mod( 'background_repeat', get_theme_support( 'custom-background', 'default-repeat' ) );
-        if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
+        $repeat = get_theme_mod('background_repeat', get_theme_support('custom-background', 'default-repeat'));
+        if (!in_array($repeat, array('no-repeat', 'repeat-x', 'repeat-y', 'repeat')))
             $repeat = 'repeat';
         $repeat = " background-repeat: $repeat;";
 
-        $position = get_theme_mod( 'background_position_x', get_theme_support( 'custom-background', 'default-position-x' ) );
-        if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) )
+        $position = get_theme_mod('background_position_x', get_theme_support('custom-background', 'default-position-x'));
+        if (!in_array($position, array('center', 'right', 'left')))
             $position = 'left';
         $position = " background-position: top $position;";
 
-        $attachment = get_theme_mod( 'background_attachment', get_theme_support( 'custom-background', 'default-attachment' ) );
-        if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
+        $attachment = get_theme_mod('background_attachment', get_theme_support('custom-background', 'default-attachment'));
+        if (!in_array($attachment, array('fixed', 'scroll')))
             $attachment = 'scroll';
         $attachment = " background-attachment: $attachment;";
 
         $style .= $image . $repeat . $position . $attachment;
     }
-?>
-<style type="text/css" id="custom-background-css">
-body.kopa-boxed { <?php echo trim( $style ); ?> }
-</style>
-<?php
+    ?>
+    <style type="text/css" id="custom-background-css">
+        body.kopa-boxed { <?php echo trim($style); ?> }
+    </style>
+    <?php
 }
 
 /**
@@ -1241,25 +1265,25 @@ body.kopa-boxed { <?php echo trim( $style ); ?> }
  * @param string $sep Optional separator.
  * @return string The filtered title.
  */
-function kopa_wp_title( $title, $sep ) {
+function kopa_wp_title($title, $sep) {
     global $paged, $page;
 
-    if ( is_feed() ) {
+    if (is_feed()) {
         return $title;
     }
 
     // Add the site name.
-    $title .= get_bloginfo( 'name' );
+    $title .= get_bloginfo('name');
 
     // Add the site description for the home/front page.
-    $site_description = get_bloginfo( 'description', 'display' );
-    if ( $site_description && ( is_home() || is_front_page() ) ) {
+    $site_description = get_bloginfo('description', 'display');
+    if ($site_description && ( is_home() || is_front_page() )) {
         $title = "$title $sep $site_description";
     }
 
     // Add a page number if necessary.
-    if ( $paged >= 2 || $page >= 2 ) {
-        $title = "$title $sep " . sprintf( __( 'Page %s', kopa_get_domain() ), max( $paged, $page ) );
+    if ($paged >= 2 || $page >= 2) {
+        $title = "$title $sep " . sprintf(__('Page %s', kopa_get_domain()), max($paged, $page));
     }
 
     return $title;
