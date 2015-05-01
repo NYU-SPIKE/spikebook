@@ -1,0 +1,117 @@
+/*
+Theme Name:     Kleo Child
+Theme URI:		http://seventhqueen.com/themes/kleo
+Description:    Child theme for Kleo
+Author:         SeventhQueen
+Author URI:     http://seventhqueen.com
+Template:       kleo
+Tags:  one-column, two-columns, right-sidebar, fluid-layout, custom-menu, featured-images, post-formats, sticky-post, translation-ready
+License: GNU General Public License
+License URI: license.txt
+*/
+
+.bbpress-label {
+	color: #fff;
+	padding: 2px 4px;
+	border-radius: 2px;
+	margin-right: 5px;
+	font-size: 11px;
+	text-transform:uppercase;
+}
+.bbpress-label.resolved {
+	background: #7fc379;
+}
+.bbpress-label.in-progress {
+	background: #c0bbc0;
+}
+.bbpress-label.not-resolved {
+	background: #f9ae64;
+}
+
+#bbpress-forums li.bbp-forum-freshness .bbp-topic-meta, #bbpress-forums li.bbp-topic-freshness .bbp-topic-meta { display: inline; }
+.home #bbpress-forums { margin-bottom: 0;}
+
+.aq_widget_display_forums .bbp-forum-title {font-size: 15px;line-height: 26px;}
+.aq_widget_display_forums  .bbp-forum-title.current {font-weight: bold;}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+}
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+}
+#main .main-color h1, #main .main-color h2, #main .main-color h3, #main .main-color h4, #main .main-color h5, #main .main-color h6, .main-color .btn-default, .main-color .btn-default:hover, .main-color .panel-default .panel-title a, .main-color .panel-kleo .panel-title a, #main .main-color h3 a, .main-color .posts-listing .article-title a, .main-color .entry-content .post-title a, .main-color #respond .form-submit input#submit, .main-color .pricing-table .pmpro-price .lead, .main-color #buddypress #friend-list .item-title a, .main-color #buddypress #member-list h5 a, .main-color #buddypress #members-list .item-title a, .main-color #buddypress li.unread div.thread-info a, .main-color #buddypress #groups-list .item-title a, .main-color .unread-notifications td.notify-text a, .main-color #buddypress button:hover, .main-color #buddypress a.button:hover, .main-color #buddypress a.button:focus, .main-color #buddypress input[type="submit"]:hover, .main-color #buddypress input[type="button"]:hover, .main-color #buddypress input[type="reset"]:hover, .main-color #buddypress ul.button-nav li a:hover, .main-color #buddypress ul.button-nav li.current a, .main-color #buddypress div.generic-button a:hover, .main-color #buddypress .comment-reply-link:hover, .main-color #buddypress div#subnav.item-list-tabs ul li.selected a, .main-color #buddypress div#subnav.item-list-tabs ul li a:hover, .main-color #buddypress div.item-list-tabs li.selected a, .main-color #buddypress .standard-form textarea, .main-color #buddypress .standard-form input[type="text"], .main-color #buddypress .standard-form input[type="color"], .main-color #buddypress .standard-form input[type="date"], .main-color #buddypress .standard-form input[type="datetime"], .main-color #buddypress .standard-form input[type="datetime-local"], .main-color #buddypress .standard-form input[type="email"], .main-color #buddypress .standard-form input[type="month"], .main-color #buddypress .standard-form input[type="number"], .main-color #buddypress .standard-form input[type="range"], .main-color #buddypress .standard-form input[type="search"], .main-color #buddypress .standard-form input[type="tel"], .main-color #buddypress .standard-form input[type="time"], .main-color #buddypress .standard-form input[type="url"], .main-color #buddypress .standard-form input[type="week"], .main-color #buddypress .standard-form select, .main-color #buddypress .standard-form input[type="password"], .main-color #buddypress .dir-search input[type="search"], .main-color #buddypress .dir-search input[type="text"], .main-color li.bbp-forum-info .bbp-forum-title, .main-color ul.topic.sticky .bbp-topic-permalink, .main-color #bbpress-forums div.bbp-forum-author a.bbp-author-name, .main-color #bbpress-forums div.bbp-topic-author a.bbp-author-name, .main-color #bbpress-forums div.bbp-reply-author a.bbp-author-name, .main-color .bbp-submit-wrapper button.button, .main-color #bbpress-forums .bbp-form input[type="text"], .main-color .wp-editor-area, .main-color .rtmedia-container .rtmedia-editor-main dl.tabs dd.active > a, .main-color .rtmedia-activity-container .rtmedia-editor-main dl.tabs dd.active > a, .main-color #buddypress div.rtmedia-activity-container .rtmedia-editor-main dl.tabs dd.active > a, .main-color .rtmedia-container .rtmedia-editor-main dl.tabs dd > a:hover, .main-color .rtmedia-activity-container .rtmedia-editor-main dl.tabs dd > a:hover, .main-color #buddypress div.rtmedia-activity-container .rtmedia-editor-main dl.tabs dd > a:hover {
+    color: #444444;
+}
+.main-color .btn-default, .main-color .btn-default:hover, .main-color .nav-pills > li.active > a, .main-color .nav-pills > li.active > a:hover, .main-color .nav-pills > li.active > a:focus, .main-color .tabs-style-square > li > a, .main-color .nav-tabs > li.active > a, .main-color .nav-tabs > li.active > a:hover, .main-color .nav-tabs > li.active > a:focus, .main-color .panel-default, .main-color #wp-calendar thead th, .main-color #wp-calendar tbody td, .main-color .widget_tag_cloud a, .main-color #respond .form-submit input#submit, .main-color .mejs-container .mejs-controls, .main-color #buddypress div.activity-comments form .ac-textarea, .main-color #search-members-form, .main-color #search-groups-form, .main-color #buddypress .standard-form input[type="text"]:focus, .main-color .bbp-topics ul.sticky, .main-color .bbp-submit-wrapper button.button, .main-color #bbpress-forums form#bbp-search-form, .main-color .rtmedia-container .drag-drop, .main-color .rtmedia-activity-container .drag-drop, .main-color #buddypress div.rtmedia-activity-container .drag-drop, .main-color .rtmedia-container .rtmedia-editor-main dl.tabs dd.active > a, .main-color .rtmedia-activity-container .rtmedia-editor-main dl.tabs dd.active > a, .main-color #buddypress div.rtmedia-activity-container .rtmedia-editor-main dl.tabs dd.active > a, .main-color .rtmedia-container .rtmedia-editor-main dl.tabs dd > a:hover, .main-color .rtmedia-activity-container .rtmedia-editor-main dl.tabs dd > a:hover, .main-color #buddypress div.rtmedia-activity-container .rtmedia-editor-main dl.tabs dd > a:hover {
+    border-color: #E5E5E5;
+}
+.main-color .btn-default, .main-color .nav-pills > li.active > a, .main-color .nav-pills > li.active > a:hover, .main-color .nav-pills > li.active > a:focus, .main-color .tabs-style-square > li > a, .main-color .panel-default > .panel-heading, .main-color .dropdown-menu > li > a:hover, .main-color .dropdown-menu > li > a:focus, .main-color .dropdown-submenu:hover > a, .main-color .dropdown-submenu:focus > a, .main-color .dropdown-menu > .active > a, .main-color .dropdown-menu > .active > a:hover, .main-color .dropdown-menu > .active > a:focus, .main-color .pagination > li > a:hover, .main-color .pagination > li > span.current, .main-color #wp-calendar thead th, .main-color #wp-calendar tbody td a, .main-color .widget_tag_cloud a, .main-color .widget_nav_menu li.active > a, .main-color #wp-calendar tbody td:hover, .main-color .widget_nav_menu .current_page_item > a, .main-color .callout-blockquote blockquote, .main-color #respond .form-submit input#submit, .main-color .form-control:focus, .main-color .pricing-table .panel-heading, .main-color .pricing-table .panel-body, .main-color .pricing-table .pmpro-price .lead, .main-color .pricing-table .extra-description, .main-color .mejs-container .mejs-controls, .main-color #buddypress div.item-list-tabs ul li a span, .main-color #bp-login-widget-submit, .main-color .bbp_widget_login .button.user-submit, .main-color .rtmedia-container #rtMedia-queue-list tr > td.close, .main-color .rtmedia-activity-container #rtMedia-queue-list tr > td.close, .main-color #buddypress div.activity-comments form .ac-textarea, .main-color #buddypress .standard-form input[type="text"]:focus, .main-color #buddypress table.notifications thead tr, .main-color #buddypress table.notifications-settings thead tr, .main-color #buddypress table.profile-fields thead tr, .main-color #buddypress table.wp-profile-fields thead tr, .main-color #buddypress table.messages-notices thead tr, .main-color #buddypress table.forum thead tr, .main-color #buddypress button:hover, .main-color #buddypress a.button:hover, .main-color #buddypress a.button:focus, .main-color #buddypress a.bp-secondary-action.view:hover, .main-color #buddypress input[type="submit"]:hover, .main-color #buddypress input[type="button"]:hover, .main-color #buddypress input[type="reset"]:hover, .main-color #buddypress ul.button-nav li a:hover, .main-color #buddypress ul.button-nav li.current a, .main-color #buddypress div.generic-button a:hover, .main-color #buddypress .comment-reply-link:hover, .main-color .bbp-pagination-links a:hover, .main-color .bbp-pagination-links span.current, .main-color #bbpress-forums li.bbp-body ul.topic.sticky, .main-color .bbp-submit-wrapper button.button, .main-color #bbpress-forums .bbp-form input[type="text"]:focus, .main-color .wp-editor-area:focus, .main-color .rtmedia-container .drag-drop, .main-color .rtmedia-activity-container .drag-drop, .main-color #buddypress div.rtmedia-activity-container .drag-drop, .main-color #buddypress #item-body .rtmedia-container ul#rtmedia_comment_ul li, .main-color #buddypress #item-body .rtmedia-activity-container ul#rtmedia_comment_ul li, .main-color .rtmedia-container .rtmedia-editor-main dl.tabs dd.active > a, .main-color .rtmedia-activity-container .rtmedia-editor-main dl.tabs dd.active > a, .main-color #buddypress div.rtmedia-activity-container .rtmedia-editor-main dl.tabs dd.active > a, .main-color .rtmedia-container .rtmedia-editor-main dl.tabs dd > a:hover, .main-color .rtmedia-activity-container .rtmedia-editor-main dl.tabs dd > a:hover, .main-color #buddypress div.rtmedia-activity-container .rtmedia-editor-main dl.tabs dd > a:hover, .main-color .rtmedia-container .imgedit-wrap div.imgedit-menu, .main-color .rtmedia-container .imgedit-menu div {
+    background-color: #F7F7F7;
+}
+#bbps-topic-assign input[type="submit"],
+#bbps-topic-status  input[type="submit"] {
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 3px 0;
+    min-width: 80px;
+    padding: 5px 10px;
+    transition: all 0.4s ease-in-out 0s;
+	color: #444444;
+	background-color: #F7F7F7;
+}
+
+.not-logged-in-notice {
+padding: 10px;
+background: #F7F7F7;
+}
+
+#bbpress-forums .status-closed, #bbpress-forums .status-closed a {color: #777777;}
+
+#bbpress-forums .status-closed .bbpress-label.resolved + a:before {
+	content: "\E83B";font-family: Fontello;margin-right: 10px;
+}
+
+#bbp-search-form input#bbp_search {
+    width: 80%;
+	float:left;
+}
+
+
+.sidebar-right .inner-content {padding-left: 15px;}
+
+.bbp-attachments ol {
+	width:100%;
+}
+.bbp-attachments li {
+    margin-bottom: 3px !important;
+}
+
+.bbp-attachments-count { display: none !important; }
+.bbp-reply-notes {
+    display: inline !important;
+}
+
+.type-page {
+    font-size: 13px;
+    line-height: 24px;
+}
+
+/* live search */
+#bbpress_livesearch {
+    float: right;
+    width: 50%;
+}
+#bbpress-forums div.bbp-the-content-wrapper {clear:both;}
+
+.bbpress_liveresult_item {
+    border-bottom: 1px dashed #ccc;
+    line-height: 26px;
+}
+
+.wpb_tour .tab-content {width: 80%;}
+.wpb_tour .nav-tab {width: 20%;}
